@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Hangman</h1>
+    <p>Player 1: Enter a word for Player 2 to guess</p>
+    <input id="word-input" type="text" />
+    <button id="submit-word">Submit Word</button>
+    <p>Player 2: Guess a letter</p>
+    <input id="guess-input" type="text" />
+    <button id="guess-button">Guess</button>
+    <div class="game-container">
+        <svg width="200" height="300">
+            <!--Rod-->
+            <line x1="60" y1="20" x2="140" y2="20"></line>
+            <line x1="60" y1="20" x2="60" y2="260"></line>
+            <line x1="140" y1="20" x2="140" y2="60"></line>
+            <line x1="20" y1="260" x2="100" y2="260"></line>
+            <!--Head-->
+            <circle r="20" cx="140" cy="80" class="figure_parts"></circle>
+            <!--body-->
+            <line x1="140" y1="100" x2="140" y2="180" class="figure_parts"></line>
+            <!--arms-->
+            <line x1="140" y1="130" x2="110" y2="105" class="figure_parts"></line>
+            <line x1="140" y1="130" x2="170" y2="105" class="figure_parts"></line>
+            <!--Legs-->
+            <line x1="140" y1="180" x2="110" y2="210" class="figure_parts"></line>
+            <line x1="140" y1="180" x2="170" y2="210" class="figure_parts"></line>
+        </svg>
+        <div class="wrong-letters-container">
+            <div class="wrong-letter" id="wrong-letter"></div>
+        </div>
+        <div class="word" id="word"></div>
+        <div class="popup-container" id="popup-container">
+            <div class="popup">
+                <h2 id="final-message"></h2>
+                <button id="play-button">Play Again</button>
+            </div>
+        </div>
+        <div class="notification-container" id="notification-container">
+            <h2>You entered this letter</h2>
+        </div>
+    </div>
+</body>
+</html>

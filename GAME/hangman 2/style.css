@@ -1,0 +1,173 @@
+body {
+    background-color: #75c2b3;
+    color: black;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    fill: transparent;
+    stroke: black;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    width: 250px;
+    height: 400px;
+    background-color: #75c2b3;
+    padding: 20px;
+    
+}
+
+.figure_parts {
+    display: none;
+}
+
+.wrong-letters-container {
+    position: absolute;
+  
+    right: 50%;
+    font-size: 40px;
+    max-height: 150px; /* adjust the max height */
+    overflow-y: auto; /* add scrollbar if needed */
+  }
+
+.wrong-letter {
+    font-size: 25px;
+}
+
+.word {
+    display: flex;
+    font-size: 30px;
+    margin: 20px;
+}
+
+.word .letter {
+    font-size: 30px;
+    margin: 5px;
+    border-bottom: solid 3px #0b5f4e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 60px;
+}
+
+.popup-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    background-color: #00ffcc;
+    border-radius: 5px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    height: 200px;
+}
+
+.popup button {
+    outline: none;
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    font-weight: bold;
+    color: #0d382f;
+    font-size: 18px;
+}
+
+.popup button:active {
+    transform: scale(0.98);
+}
+
+.notification-container {
+    position: absolute;
+    bottom: -150px;
+    transition: transform 0.7s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    font-size: 18px;
+}
+
+.notification-container.show {
+    transform: translateY(-150px);
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(73, 103, 108);
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #27333b;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+/* desktop layout */
+@media (max-width: 700px) {
+    .game-container {
+      width: 300px;
+      height: 400px;
+    }
+    .wrong-letters-container {
+      top: 25%;
+      right: 25%;
+    }
+  }
+  
+  /* tablet layout */
+  @media (min-width: 480px) and (max-width: 767px) {
+    .game-container {
+      width: 250px;
+      height: 350px;
+    }
+    .wrong-letters-container {
+      top: 30%;
+      right: 30%;
+    }
+  }
+  
+  /* mobile layout */
+  @media (max-width: 479px) {
+    .game-container {
+      width: 200px;
+      height: 300px;
+    }
+    .wrong-letters-container {
+      top: 35%;
+      right: 35%;
+    }
+  }  
